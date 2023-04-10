@@ -152,7 +152,10 @@ program
     fs.writeFile('package.json',packageJsonTemplate,(err)=>{
         console.log(err);
     })
-
+    //生成忽略文件
+    fs.writeFile('.gitignore',`node_modules/`,(err)=>{
+        console.log(err);
+    })
     //生成webpack配置
     fs.writeFile('webpack.config.js',webpackConfigJsTemplate,(err)=>{
         console.log(err);
