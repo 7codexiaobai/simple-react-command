@@ -116,7 +116,7 @@ module.exports = {
 };`
 program
   .version('0.1.0')
-  .command('hello')
+  .command('create')
   .description('Say hello')
   .option('-n, --name <name>', 'Your name')
   .option('-v, --type <name>', 'Your type')
