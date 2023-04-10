@@ -13,10 +13,21 @@ const htmlTemplate=`<!DOCTYPE html>
     <title>iceTest</title>
 </head>
 <body>
-    
+    <div id="'root"></div>
 </body>
-</html>`
-
+</html>
+<script src="main.js"></script>`;
+//main.js模版
+const mainJsTemplate=`import React,{ReactDOM} from "react";
+import App from './App.jsx'
+const root=document.getElementById('root');
+React.createElement(<App />,root);`;
+//app.js模版
+const appJsTemplate=`import React from "react";
+function App<FunctionComponent>() {
+  return <div>测试版</div>;
+}
+export default App;`;
 
 program
   .version('0.1.0')
@@ -32,6 +43,16 @@ program
     fs.writeFile('index.html',htmlTemplate,(err)=>{
         console.log(err);
     })
+    fs.mkdir('src', { recursive: true }, (err) => {
+        if (err) throw err;
+        console.log('src 目录已创建');
+        fs.writeFile('src/App.tsx',appJsTemplate,(err)=>{
+            console.log(err);
+        })
+        fs.writeFile('src/index.js',mainJsTemplate,(err)=>{
+            console.log(err);
+        })
+      });    
   });
 
 program.parse(process.argv);
