@@ -140,7 +140,7 @@ program
     fs.mkdir('src', { recursive: true }, (err) => {
         if (err) throw err;
         console.log('src 目录已创建');
-        fs.writeFile('src/App.tsx',appJsTemplate,(err)=>{
+        fs.writeFile('src/App.jsx',appJsTemplate,(err)=>{
             console.log(err);
         })
         fs.writeFile('src/main.js',mainJsTemplate,(err)=>{
