@@ -1,6 +1,6 @@
 {
   "name": "learncommander",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "学习命令行工具",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "commander": "^10.0.0",
     "inquirer": "^9.1.5"
   },
-  "bin":{
-    "create":"./index.js"
+  "bin": {
+    "create": "./index.js"
   }
 }
