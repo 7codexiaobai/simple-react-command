@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/7codexiaobai/simple-react-command/issues"
   },
-  "homepage": "https://github.com/7codexiaobai/simple-react-command#readme"
+  "homepage": "https://github.com/7codexiaobai/simple-react-command#readme",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.5"
+  },
+  "bin":{
+    "create":"./index.js"
+  }
 }
