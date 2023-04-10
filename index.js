@@ -13,10 +13,10 @@ const htmlTemplate=`<!DOCTYPE html>
     <title>iceTest</title>
 </head>
 <body>
-    <div id="'root"></div>
+    <div id="root"></div>
 </body>
 </html>
-<script src="main.js"></script>`;
+`;
 
 //main.js模版
 const mainJsTemplate=`import React from "react";
@@ -68,7 +68,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   mode: 'development', // 模式，可以是development或production
-  entry: './src/index.js', // 入口文件
+  entry: './src/main.js', // 入口文件
   output: { // 输出文件
     filename: 'bundle.js', // 文件名
     path: path.resolve(__dirname, 'dist') // 输出目录
@@ -104,7 +104,7 @@ module.exports = {
   },
   plugins: [ // 插件
     new HtmlWebpackPlugin({ // 自动生成HTML文件
-      template: './src/index.html' // 模板文件
+      template: './public/index.html' // 模板文件
     }),
     new FriendlyErrorsWebpackPlugin(),
     // new BundleAnalyzerPlugin(),
