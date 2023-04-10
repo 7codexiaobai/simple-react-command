@@ -28,7 +28,7 @@ ReactDOM.render(<App />,root)`;
 
 //app.js模版
 const appJsTemplate=`import React from "react";
-function App<FunctionComponent>() {
+function App() {
   return <div>测试版</div>;
 }
 export default App;`;
