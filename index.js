@@ -4,6 +4,7 @@ const {htmlTemplate}=require('./template/htmlTemplate');
 const {appJsTemplate}=require('./template/appJsTemplate');
 const {webpackConfigTemplate}=require('./template/webpackConfigJsTemplate');
 const {packageJsonTemplate}=require('./template/packageJsonTemplate');
+const {mainTemplate}=require('./template/mainJsTemplate');
 
 
 
@@ -17,12 +18,7 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 
-//main.js模版
-const mainJsTemplate=`import React from "react";
-import ReactDOM from 'react-dom';
-import App from './App.jsx'
-const root = document.getElementById('root');
-ReactDOM.render(<App />,root)`;
+
 
 
 program
@@ -46,9 +42,10 @@ program
 
         //生成js 或ts package依赖配置
         packageJsonTemplate(answer);
-        fs.writeFile('src/main.js',mainJsTemplate,(err)=>{
-            // console.log(err);
-        });
+        
+        //生成js或ts入口文件
+        mainTemplate(answer);
+    
       
     }); 
      //生成忽略文件
